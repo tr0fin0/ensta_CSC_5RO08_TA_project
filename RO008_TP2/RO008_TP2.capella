@@ -608,7 +608,87 @@
           <ownedStateMachines xsi:type="org.polarsys.capella.core.data.capellacommon:StateMachine"
               id="9971ac03-0416-452f-9a70-9ba5bd5de925" name="System State Machine">
             <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
-                id="b3f4ace3-38d3-48ed-90a5-4e4cdf563c39" name="Default Region"/>
+                id="b3f4ace3-38d3-48ed-90a5-4e4cdf563c39" name="Default Region" involvedStates="#acf1a3a0-13b8-4a69-8e40-95ba76b72114 #72d7dc70-6708-4069-9c60-2ce77b68bf61 #e7b7d937-1da8-4ce0-9701-dabd130b3479 #3d691c49-784b-4016-9b0f-a0f4ac924bb3 #acbe04eb-303e-4f8b-81f0-fb9c7cc306ea #eb423ed9-c82e-4c7b-a5ef-22ae68cb43e8 #4fec8613-cc6e-47ee-a1d3-3c56bbfdbaee #f1a86411-c68a-44a7-9237-d3f67ad0a62a">
+              <ownedStates xsi:type="org.polarsys.capella.core.data.capellacommon:Mode"
+                  id="acf1a3a0-13b8-4a69-8e40-95ba76b72114" name="Manual Operation">
+                <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
+                    id="377d62a5-ee7f-4457-978e-fe92f5835e09" name="Wherever"/>
+              </ownedStates>
+              <ownedStates xsi:type="org.polarsys.capella.core.data.capellacommon:Mode"
+                  id="72d7dc70-6708-4069-9c60-2ce77b68bf61" name="Idle on Ground">
+                <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
+                    id="f66b0bec-72ee-4f7d-8ffd-d1e1bbe4b460" name="Rest Station"/>
+              </ownedStates>
+              <ownedStates xsi:type="org.polarsys.capella.core.data.capellacommon:Mode"
+                  id="e7b7d937-1da8-4ce0-9701-dabd130b3479" name="Mode 3">
+                <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
+                    id="effbaf51-4541-486d-95c9-be3fb98e2c82" name="When recalled"/>
+              </ownedStates>
+              <ownedStates xsi:type="org.polarsys.capella.core.data.capellacommon:Mode"
+                  id="3d691c49-784b-4016-9b0f-a0f4ac924bb3" name="Inspection">
+                <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
+                    id="44d7288e-7973-4e1a-bb67-6ed4964a44d9" name="Within detection"/>
+              </ownedStates>
+              <ownedStates xsi:type="org.polarsys.capella.core.data.capellacommon:Mode"
+                  id="acbe04eb-303e-4f8b-81f0-fb9c7cc306ea" name="Alert">
+                <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
+                    id="27aba445-6ee9-4d77-9956-38b0cf6afd4b" name="Within anomaly"/>
+              </ownedStates>
+              <ownedStates xsi:type="org.polarsys.capella.core.data.capellacommon:Mode"
+                  id="eb423ed9-c82e-4c7b-a5ef-22ae68cb43e8" name="Persuit">
+                <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
+                    id="21130a49-9d6c-4de6-a0f6-80a4213eea9b" name="Nearby detection"/>
+              </ownedStates>
+              <ownedStates xsi:type="org.polarsys.capella.core.data.capellacommon:Mode"
+                  id="4fec8613-cc6e-47ee-a1d3-3c56bbfdbaee" name="Patrol">
+                <ownedRegions xsi:type="org.polarsys.capella.core.data.capellacommon:Region"
+                    id="1b63ed03-c4c2-4894-950c-0a20924cce8d" name="IP Paris"/>
+              </ownedStates>
+              <ownedStates xsi:type="org.polarsys.capella.core.data.capellacommon:InitialPseudoState"
+                  id="f1a86411-c68a-44a7-9237-d3f67ad0a62a" name="Initial"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="5688f53f-839c-4ee7-8577-3cbe2cb2c684" triggerDescription=""
+                  source="#f1a86411-c68a-44a7-9237-d3f67ad0a62a" target="#72d7dc70-6708-4069-9c60-2ce77b68bf61"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="e8d53fc4-4fba-4de9-bea2-ce2335852574" triggerDescription="Manual Instructions"
+                  source="#72d7dc70-6708-4069-9c60-2ce77b68bf61" target="#acf1a3a0-13b8-4a69-8e40-95ba76b72114"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="d2ba206e-e3ed-4e95-a261-528fe0da2204" triggerDescription="Shutdown"
+                  source="#acf1a3a0-13b8-4a69-8e40-95ba76b72114" target="#72d7dc70-6708-4069-9c60-2ce77b68bf61"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="59adb297-b0e7-4a34-a945-16551338a72b" triggerDescription=""
+                  source="#72d7dc70-6708-4069-9c60-2ce77b68bf61" target="#4fec8613-cc6e-47ee-a1d3-3c56bbfdbaee"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="8eeb19a9-7fb5-4052-b643-85229f47b017" triggerDescription="Recall"
+                  source="#4fec8613-cc6e-47ee-a1d3-3c56bbfdbaee" target="#e7b7d937-1da8-4ce0-9701-dabd130b3479"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="74c790f6-935a-4b06-a995-150ccd5172b1" triggerDescription="Cancel recall"
+                  source="#e7b7d937-1da8-4ce0-9701-dabd130b3479" target="#4fec8613-cc6e-47ee-a1d3-3c56bbfdbaee"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="b229f678-8394-45c0-a393-53dbf05442de" triggerDescription="End operation"
+                  source="#e7b7d937-1da8-4ce0-9701-dabd130b3479" target="#72d7dc70-6708-4069-9c60-2ce77b68bf61"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="7e7ac19a-e46c-4b09-8745-aa10160e68dc" triggerDescription="Detect possible anomaly"
+                  source="#4fec8613-cc6e-47ee-a1d3-3c56bbfdbaee" target="#eb423ed9-c82e-4c7b-a5ef-22ae68cb43e8"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="6fdff49e-e257-4887-8468-2b291c79fee3" triggerDescription="Invalidate anomaly"
+                  source="#eb423ed9-c82e-4c7b-a5ef-22ae68cb43e8" target="#4fec8613-cc6e-47ee-a1d3-3c56bbfdbaee"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="5259ae72-0776-4c97-9748-90d83a8dd752" triggerDescription="Arive at destination"
+                  source="#eb423ed9-c82e-4c7b-a5ef-22ae68cb43e8" target="#3d691c49-784b-4016-9b0f-a0f4ac924bb3"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="2ec6cf8e-9b51-40cf-93db-8ae2543259fe" triggerDescription="Invalidatte position"
+                  source="#3d691c49-784b-4016-9b0f-a0f4ac924bb3" target="#eb423ed9-c82e-4c7b-a5ef-22ae68cb43e8"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="084f74ec-db8c-4faa-924d-0c632865bb37" triggerDescription="Validate anomaly"
+                  source="#3d691c49-784b-4016-9b0f-a0f4ac924bb3" target="#acbe04eb-303e-4f8b-81f0-fb9c7cc306ea"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="9b0c5a52-2544-4f68-b87a-c8a1927f1d36" triggerDescription="Finishes report"
+                  source="#acbe04eb-303e-4f8b-81f0-fb9c7cc306ea" target="#4fec8613-cc6e-47ee-a1d3-3c56bbfdbaee"/>
+              <ownedTransitions xsi:type="org.polarsys.capella.core.data.capellacommon:StateTransition"
+                  id="5981b657-87d0-4851-9528-8b1f515204ca" triggerDescription="Invalidate anomaly"
+                  source="#3d691c49-784b-4016-9b0f-a0f4ac924bb3" target="#4fec8613-cc6e-47ee-a1d3-3c56bbfdbaee"/>
+            </ownedRegions>
           </ownedStateMachines>
         </ownedSystemComponents>
         <ownedSystemComponents xsi:type="org.polarsys.capella.core.data.ctx:SystemComponent"
