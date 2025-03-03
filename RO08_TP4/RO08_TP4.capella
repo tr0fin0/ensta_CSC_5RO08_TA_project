@@ -38,7 +38,7 @@
   <keyValuePairs xsi:type="org.polarsys.capella.core.data.capellacore:KeyValue" id="34e141e2-ccd2-4709-96eb-8f725a9d9447"
       key="projectApproach" value="SingletonComponents"/>
   <ownedModelRoots xsi:type="org.polarsys.capella.core.data.capellamodeller:SystemEngineering"
-      id="2eb7957e-83ab-4c8e-a519-c69dd3b94e89" name="RO08">
+      id="2eb7957e-83ab-4c8e-a519-c69dd3b94e89" name="RO08_TP4">
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.oa:OperationalAnalysis"
         id="42f5f80f-6c23-4d57-85f6-5affbf6a8065" name="Operational Analysis">
       <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalActivityPkg"
